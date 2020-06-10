@@ -20,13 +20,14 @@ let scrape = (async () => {
     //     })
 
     const result1 = await page.evaluate(() => {
-        let content1 = document.getElementById('size-120223').innerText;
+        let content1 = document.getElementById('size-106993').innerText;
         //alert(content1);
-        let content2 = document.getElementById('product-name-120223').innerHTML; 
+        let content2 = document.getElementById('product-name-106993').innerHTML; 
+        //alert(content2);
         let content23 = content2.split(" ");
         let content = -1;
-        let result = content23[content23.length - 1];
-        if(content1 == '100ml' && result == '100ml'){
+        let r1 = content23[content23.length - 1];
+        if (content1 == '100ml' && r1 == '100ml'){
             content = 8;
         }  
         return content;
@@ -38,8 +39,102 @@ let scrape = (async () => {
         // };
     });
 
+    if(result1 == 8) {
+        browser.close();
+        return 1;
+    }
+    
+    const result2 = await page.evaluate(() => {
+        let content1 = document.getElementById('size-106994').innerText;
+        //alert(content1);
+        let content2 = document.getElementById('product-name-106994').innerHTML;
+        let content23 = content2.split(" ");
+        let content = -1;
+        let r2 = content23[content23.length - 1];
+        if (content1 == '100ml' && r2 == '100ml') {
+            content = 8;
+        }
+        return content;
+    });
+
+    if (result2 == 8) {
+        browser.close();
+        return 1;
+    }
+
+    const result3 = await page.evaluate(() => {
+        let content1 = document.getElementById('size-94513').innerText;
+        //alert(content1);
+        let content2 = document.getElementById('product-name-94513').innerHTML;
+        let content23 = content2.split(" ");
+        let content = -1;
+        let r3 = content23[content23.length - 1];
+        if (content1 == '100ml' && r3 == '100ml') {
+            content = 8;
+        }
+        return content;
+    });
+
+    if (result3 == 8) {
+        browser.close();
+        return 1;
+    }
+
+    const result4 = await page.evaluate(() => {
+        let content1 = document.getElementById('size-120223').innerText;
+        //alert(content1);
+        let content2 = document.getElementById('product-name-120223').innerHTML;
+        let content23 = content2.split(" ");
+        let content = -1;
+        let r4 = content23[content23.length - 1];
+        if (content1 == '100ml' && r4 == '100ml') {
+            content = 8;
+        }
+        return content;
+    });
+    if (result4 == 8) {
+        browser.close();
+        return 1;
+    }
+
+    const result5 = await page.evaluate(() => {
+        let content1 = document.getElementById('size-119624').innerText;
+        //alert(content1);
+        let content2 = document.getElementById('product-name-119624').innerHTML;
+        let content23 = content2.split(" ");
+        let content = -1;
+        let r5 = content23[content23.length - 1];
+        if (content1 == '100ml' && r5 == '100ml') {
+            content = 8;
+        }
+        return content;
+    });
+
+    if (result5 == 8) {
+        browser.close();
+        return 1;
+    }
+
+    const result6 = await page.evaluate(() => {
+        let content1 = document.getElementById('size-120208').innerText;
+        //alert(content1);
+        let content2 = document.getElementById('product-name-120208').innerHTML;
+        let content23 = content2.split(" ");
+        let content = -1;
+        let r6 = content23[content23.length - 1];
+        if (content1 == '100ml' && r6 == '100ml') {
+            content = 8;
+        }
+        return content;
+    });
+
+    if (result6 == 8) {
+        browser.close();
+        return 1;
+    }
+
     browser.close();
-    return  result1;
+    return -1;
     } catch (err) {
         console.log(err);
     }
