@@ -26,7 +26,7 @@ let scrape = (async () => {
         let content23 = content2.split(" ");
         let content = -1;
         let result = content23[content23.length - 1];
-        if(content1 == '100ml' && result == 'Oil'){
+        if(content1 == '100ml' && result == '100ml'){
             content = 8;
         }  
         return content;
